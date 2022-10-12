@@ -1,0 +1,22 @@
+{
+   "mySiblings1" : {
+      "name" : "jes",
+      "password" : "password1",
+      "sibling" : "sister",
+      "id": 1
+   },
+   
+   "mySiblings2" : {
+      "name" : "juan",
+      "password" : "password2",
+      "sibling" : "brother",
+      "id": 2
+   },
+   
+   "mySiblings3" : {
+      "name" : "jariel",
+      "password" : "password3",
+      "sibling" : "brother",
+      "id": 3
+   }
+}
