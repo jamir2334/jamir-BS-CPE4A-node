@@ -15,9 +15,9 @@ app.delete('/:id', function (req, res) {
    // First read existing users.
    fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
       data = JSON.parse( data );
-      delete data["user" + req.params.id];
+      delete data["mySiblings" + req.params.id];
        
-      console.log( data );
+      console.log(data);
       res.end( JSON.stringify(data));
    });
 })
@@ -28,7 +28,7 @@ app.post('/addUser', function (req, res) {
    fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
       data = JSON.parse( data );
       data["mySiblings4"] = user["mySiblings4"];
-      console.log( data );
+      console.log(data);
       res.end( JSON.stringify(data));
    });
 })
@@ -40,7 +40,15 @@ app.get('/listUsers', function (req, res) {
    });
 })
 
-
+app.get('/:id', function (req, res) {
+   // First read existing users.
+   fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
+      var users = JSON.parse( data );
+      var user = users["mySiblings" + req.params.id] 
+      console.log(mySibling);
+      res.end( JSON.stringify(mySiblings));
+   });
+})
 
 var server = app.listen(8081, function () {
    var host = server.address().address
